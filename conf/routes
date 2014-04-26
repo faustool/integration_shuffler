@@ -1,0 +1,15 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET     /                           controllers.Application.index()
+
+# Integration CRUD
+GET     /integration                @controllers.IntegrationController.list()
+GET     /integration/new            @controllers.IntegrationController.create()
+GET     /integration/edit/:id       @controllers.IntegrationController.edit(id: Integer)
+GET     /integration/delete/:id     @controllers.IntegrationController.delete(id: Integer)
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.at(path="/public", file)
